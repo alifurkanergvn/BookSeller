@@ -2,7 +2,10 @@
   "name": "BookSeller",
   "buildpacks": [
     {
-      "url": "heroku/gradle"
+      "url": "heroku/nodejs"
     }
-  ]
+  ],
+  "scripts": {
+    "install": "npm install"
+  }
 }
