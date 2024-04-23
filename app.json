@@ -1,11 +1,11 @@
 {
   "name": "BookSeller",
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
+  "build": {
+    "publish": {
+      "web": "java -Dspring.profiles.active=prod -Dserver.port=$PORT -jar build/libs/*.jar"
     }
-  ],
-  "scripts": {
-    "install": "npm install"
+  },
+  "start": {
+    "web": "java -Dspring.profiles.active=prod -Dserver.port=$PORT -jar build/libs/*.jar"
   }
 }
