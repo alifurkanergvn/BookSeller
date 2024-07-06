@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors(); //Backend'te ve Frontend'te farklı portlar kullancağız o yüzden cors'u aktif hale getirdik. Kaynaklar arası kaynak paylaşımıdır
         http.csrf().disable(); //session kimlik doğrulaması kullanamayacağımız için disable ettik
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);  //Stateless seçtik bu uygulamanın herhangi bir oturum oluşturmayacağının garantisini verir.
-        // Bu nedenle her bir isteğin yeniden doğrulanması gerekir.Çünkü biz session id kullanmayacağız kullanmayacağız onun yerine JWT’yi kimlik doğrulama olarak kullanacağız..
+        // Bu nedenle her bir isteğin yeniden doğrulanması gerekir.Çünkü biz session id kullanmayacağız onun yerine JWT’yi kimlik doğrulama olarak kullanacağız..
 
         http.authorizeRequests()
                 .antMatchers("/api/authentication/**").permitAll()
@@ -90,8 +90,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             public void addCorsMappings(CorsRegistry registry)
             {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
-                        .allowedMethods("*");
+                        .allowedOrigins("*")  // Tüm kaynaklardan gelen taleplere izin ver
+                        .allowedMethods("*");  // Tüm HTTP yöntemlerine izin ver
             }
         };
     }
