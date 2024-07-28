@@ -9,11 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * @author sa
- * @date 3.07.2021
- * @time 18:14
- */
+
 @Service
 public class PurchaseHistoryService implements IPurchaseHistoryService
 {
